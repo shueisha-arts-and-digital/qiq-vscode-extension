@@ -1,0 +1,37 @@
+{
+  "name": "qiq-vscode-extension",
+  "displayName": "qiq-vscode-extension",
+  "description": "Language support for Qiq templates",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.95.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "qiq",
+        "aliases": [
+          "qiq"
+        ],
+        "extensions": [
+          ".php",
+          ".qiq.php"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "qiq",
+        "scopeName": "source.qiq",
+        "path": "./syntaxes/qiq.tmLanguage.json",
+        "embeddedLanguages": {
+          "meta.embedded.block.qiq": "qiq"
+        }
+      }
+    ]
+  }
+}

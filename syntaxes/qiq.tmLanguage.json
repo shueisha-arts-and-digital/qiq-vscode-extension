@@ -1,0 +1,66 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "qiq",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#qiq-blocks"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.qiq",
+					"match": "\\b(if|while|for|return)\\b"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.qiq",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.qiq",
+					"match": "\\\\."
+				}
+			]
+		},
+		"qiq-blocks": {
+			"name": "meta.embedded.block.qiq",
+			"begin": "{{",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.template.begin.qiq"
+				}
+			},
+			"end": "}}",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.definition.template.end.qiq"
+				}
+			},
+			"patterns": [
+				{
+					"match": "\\b(if|else|elseif|endif|for|endfor|while|endwhile)\\b",
+					"name": "keyword.control.qiq"
+				},
+				{
+					"match": ":",
+					"name": "punctuation.separator.colon.qiq"
+				},
+				{
+					"match": "\\$[a-zA-Z_][a-zA-Z0-9_]*",
+					"name": "variable.other.qiq"
+				}
+			]
+		}
+	},
+	"scopeName": "source.qiq"
+}
