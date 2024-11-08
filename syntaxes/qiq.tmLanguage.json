@@ -48,7 +48,7 @@
 			},
 			"patterns": [
 				{
-					"match": "\\b(if|else|elseif|endif|for|endfor|while|endwhile)\\b",
+					"match": "\\b(if|else|elseif|endif|for|endfor|foreach|endforeach|while|endwhile)\\b",
 					"name": "keyword.control.qiq"
 				},
 				{
